@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3"></script>
+    <style>
+        label{
+            display: block;
+        }
+    </style>
+
+    <title>Tareas Diarias</title>
+</head>
+<body>
+    <div id = "myApp">
+        <h2>Ingrese las tareas que va a realizar en el dia</h2>
+    
+
+   
+        <label>Nombre de la tarea: </label>
+        <input type="text" v-model="nombre" name="" id="">
+        <label>Que se debe hacer: </label>
+        <input type="text" v-model="descripcion" name="" id="">
+        <label>Hora a realizarce: </label>
+        <input type="text" v-model="hora" name="" id="">
+        <p>{{mensaje}}</p>
+        <button v-on:click="agregarTarea()">Agregar Nueva tarea del dia</button>
+   
+
+        <hr>
+        <ul>
+            <h2>Tareas del Dia</h2>
+            <li v-for="({nombre, descripcion, hora}, index) in lista">
+                <p v-show="true">{{index+1}}: Tarea: {{nombre}} - Descripcion: {{descripcion}} - Hora: {{hora}}</p>
+                
+            </li>
+       
+        </ul>
+        <hr>
+
+
+        
+
+    </div>
+    <script src="../js/tareasDiarias.js"></script>
+</body>
+</html>
